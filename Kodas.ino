@@ -47,9 +47,7 @@ void loop() {
   float voltage = (sensorValue / (float)ADC_RESOLUTION) * VOLTAGE_REF;
   float resistance = RESISTOR * ((VOLTAGE_REF / voltage) - 1);
 
-  // Apskaičiuoti šviesos lygį naudojant fotorezistoriaus charakteristikas (priklauso nuo jūsų fotorezistoriaus)
-  // Čia naudojamas pavyzdinis skaičiavimas: lux = 500 / (resistance / 1000.0)
-  // Jums gali tekti pritaikyti šią formulę, kad atitiktų jūsų fotorezistorių.
+ 
   float lux = 500 / (resistance / 1000.0);
 
   if (lux > 10) {
