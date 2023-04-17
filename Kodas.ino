@@ -66,9 +66,9 @@ void loop() {
   int temperatureRaw = analogRead(TEMPERATURE_SENSOR_PIN);
   float temperature = (temperatureRaw / 1023.0) * 5.0 * 100;
   if (temperature > TEMPERATURE_THRESHOLD) {
-   // Serial.print("Jungiam kondiske\n");
+    Serial.print("Jungiam kondiske\n");
   } else if (temperature < TEMPERATURE_THRESHOLD) {
-   // Serial.print("Jungiam sildytuva\n ");
+    Serial.print("Jungiam sildytuva\n ");
   }
 
   // 3. Infraraudonųjų spindulių daviklis
@@ -79,8 +79,8 @@ void loop() {
 
   // 4. Potenciometras
   int angle = map(analogRead(POTENTIOMETER_PIN), 0, 1023, 0, 360);
-  Serial.print(angle);
-  Serial.print("\n");
+ // Serial.print(angle);
+ // Serial.print("\n");
   if (angle == Y) {
     analogWrite(SERVO_PIN, Y * 2);
   }
